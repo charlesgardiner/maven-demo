@@ -2,3 +2,70 @@ maven-demo
 ==========
 
 Sample maven projects
+
+https://maven.apache.org/pom.html
+http://maven.apache.org/maven-1.x/reference/properties.html
+
+Projects:
+  Modules (Aggregation or multi-module)
+  Inheritance
+  Assembly creation
+  Profiles
+  Default properties
+
+Dependency management and build tool
+  Central repo
+  Repo proxy (Artifactory, Nexus, etc)
+  Local repo ($HOME/.m2/repositoriy)
+  Transitive dependency
+  Scope 
+
+Other similar tools:
+  Ant+Ivy, Gradle, Buildr, ...
+
+Artifact identification
+  Group id
+  Artifact id
+  Version
+
+Project structure
+  src
+    main
+      <language>
+      resources
+    test
+      <language>
+      resources
+  target
+    ...
+  pom.xml
+  
+
+pom.xml
+  Identification
+  Properties
+  Dependencies
+  Build
+    Plugin definitions
+
+Goals
+Phases
+  https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+Inheritance, modules
+
+settings.xml
+  define common properties, custom repo, profiles
+
+useful cli options, properties
+resource filtering
+
+Profiles
+  Define in settings.xml/pom.xml/command line
+  Limit scope of specific sections in the pom.xml
+  Multiple profiles can be active at the same time
+  Downside: a lot of unnecessary copy-paste
+
+
+Version and release handling
+  ...
+
