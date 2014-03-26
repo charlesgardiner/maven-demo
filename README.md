@@ -14,6 +14,7 @@ Joda time is not used, it is only added to show how transitive depnendecies are 
 **pom-assembly**
 A project to show how to create a zip/tar.gz file with all the necessary dependencies. Note that transitive dependencies are also included.
 Demonstrates the usage of the maven-assembly-plugin.
+Since the plugin execution is attached to the package phase, a simple mvn install command generates the archive, no need to run mvn assembly:assembly separately.
  
 **pom-properties**
 This example prints out some default properties during the validation phase.
