@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Built-By: hesi
+Build-Jdk: 1.7.0_25
+Class-Path: ./lib/pom-lib-0.0.1-SNAPSHOT.jar ./lib/joda-time-2.3.jar
+Created-By: Apache Maven 3.0.4
+Main-Class: hu.rhevesi.mavendemo.Main
+Archiver-Version: Plexus Archiver
+

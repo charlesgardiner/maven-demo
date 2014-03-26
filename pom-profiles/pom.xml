@@ -8,6 +8,63 @@
 		<groupId>hu.rhevesi.maven-demo</groupId>
 		<artifactId>pom-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-                <relativePath>../pom-parent/pom.xml</relativePath>
+		<relativePath>../pom-parent/pom.xml</relativePath>
 	</parent>
+
+	<!-- 
+		Be careful with the below configuration: 
+		if multiple profiles are specified, only one of them will be executed
+	 -->
+	<profiles>
+		<profile>
+			<id>production</id>
+			<properties>
+				<environment>prod.example.com</environment>
+				<deploy.user>deploy</deploy.user>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<!-- 
+					Use this method to activate something by default
+					instead of <activeByDefault/>.
+					http://java.dzone.com/articles/maven-profile-best-practices
+				 -->
+				<property>
+					<name>!env.PRODUCTION_BUILD</name>
+				</property>
+			</activation>
+			<properties>
+				<!-- 
+					You can create the my.dev.env.hostname property
+					in your settings.xml.
+				 -->
+				<environment>${my.dev.env.hostname}</environment>
+				<deploy.user>root</deploy.user>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo>Deploying to: ${environment} with user: ${deploy.user}</echo>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
