@@ -32,7 +32,7 @@
 					http://java.dzone.com/articles/maven-profile-best-practices
 				 -->
 				<property>
-					<name>!env.PRODUCTION_BUILD</name>
+					<name>!env.NOT_FOR_DEV</name>
 				</property>
 			</activation>
 			<properties>
